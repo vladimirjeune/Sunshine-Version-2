@@ -1,8 +1,8 @@
 package com.example.android.sunshine.app;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -59,16 +61,22 @@ public class MainActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
 
-            ArrayList<String> conditions = new ArrayList<String>();
-            conditions.add("Today - Sunny - 88 / 63");
-            conditions.add("Tomorrow - Sunny - 54 / 43");
-            conditions.add("Friday - Partly Cloudy - 58 / 33");
-            conditions.add("Saturday - Rainy - 72 / 61");
-            conditions.add("Sunday - Sunny - 80 / 65");
-            conditions.add("Monday - Windy - 78 / 58");
-            conditions.add("Tuesday - Foggy - 68 / 19");
-            conditions.add("Wednesday - Breezy - 48 / 49");
-            conditions.add("Thursday - Cloudy - 81 / 30");
+            String[] data = {
+                    "Today - Sunny - 88 / 63",
+                    "Tomorrow - Sunny - 54 / 63",
+                    "Friday - Partly Cloudy - 58 / 33",
+                    "Saturday - Rainy - 72 / 61",
+                    "Sunday - Sunny - 80 / 65",
+                    "Monday - Gamma Ray Burst - 178 / 155",
+                    "Tuesday - Foggy - 68 / 19",
+                    "Wednesday - Breezy - 48 / 49",
+                    "Thursday - Cloudy - 81 / 30",
+            };
+
+            // Remember, Arrays.asList() returns a non resizeable list that is still
+            // attached to the original array.  So wrap it, if you do not know what
+            // you may do with it in the future.
+            List<String> weekForecast = new ArrayList<String>(Arrays.asList(data));
 
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
