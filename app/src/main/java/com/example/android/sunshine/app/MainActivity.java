@@ -82,7 +82,7 @@ public class MainActivity extends ActionBarActivity {
             // you may do with it in the future.
             List<String> weekForecast = new ArrayList<String>(Arrays.asList(data));
 
-            ArrayAdapter<String> forecastAdapter =
+            ArrayAdapter<String> mForecastAdapter =
                     // Using containing Activity as context.
                     new ArrayAdapter<String>(getActivity(),
                             // ID of item layout
@@ -92,8 +92,9 @@ public class MainActivity extends ActionBarActivity {
                             // forecast data
                             weekForecast );
 
+            // Bind Adapter to ListView
             ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
-            listView.setAdapter(forecastAdapter);
+            listView.setAdapter(mForecastAdapter);
 
             return rootView;
         }
