@@ -79,11 +79,14 @@ public class MainActivity extends ActionBarActivity {
             // you may do with it in the future.
             List<String> weekForecast = new ArrayList<String>(Arrays.asList(data));
 
-            // Using containing Activity as context.
-            ArrayAdapter<String> forecaastAdapter =
+            ArrayAdapter<String> forecastAdapter =
+                    // Using containing Activity as context.
                     new ArrayAdapter<String>(getActivity(),
+                            // ID of item layout
                             R.layout.list_item_forecast,
+                            // ID of Textview to populate
                             R.id.list_item_forecast_textview,
+                            // forecast data
                             weekForecast );
 
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
